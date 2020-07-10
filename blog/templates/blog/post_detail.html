@@ -2,10 +2,10 @@
 {% block content %}
 <h3 id=h3id>{{object.title}}</h3><br>
 <p id="btext">{{object.body}}</p><br><br>
-<button type="button" class="btn btn-success"  onclick="onClick()">Like</button>
+<button type="button" class="btn btn-success btn-sm"  onclick="onClick()">Like</button>
 published by <p class="aclass">{{object.author}}</p> on {{object.created_date}}<br>
+<br>
 <p id="like">{{object.likes}}</p>
-
 <input id="likes_id" type="hidden" name="name" value="{{object.id}}">
 
 <a type="button" class="btn btn-outline-warning" href="{% url 'blog:post-update' object.id %}">Update</a>

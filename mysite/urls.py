@@ -23,5 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('blog.urls')),
     path('accounts/',include('registration.backends.default.urls')),
-    path('accounts/profile/',RedirectView.as_view(url ='/blog'))
+    path('accounts/profile/',RedirectView.as_view(url ='/'))
 ] + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

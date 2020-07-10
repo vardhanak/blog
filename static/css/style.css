@@ -1,0 +1,122 @@
+body{
+	border : 20px solid #bdc3c7;
+    padding: 20px; 
+    max-width:10000px;
+    width:80%;
+    margin: 20px auto; 
+    font-family: source sans pro;
+}
+
+h2{
+	color: #2c3e50;
+	margin:1.66%;
+	font-size: 2.0rem
+	
+}
+.one{
+	border-left: 5px solid #bdc3c7;
+	padding-left: 5px;
+}
+.date{
+	color: #3498db;
+	margin:1.66%;
+	letter-spacing: 0.2rem;
+	
+
+}
+p{
+	margin:1.66%;
+	
+}
+hr{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+.post{
+	margin:20px;
+}
+h5{
+	color: #3474db;
+	margin:1.66%;
+	font-size: 1.3rem;
+	font-family:Arial Black Web Safe Font;
+	text-align: right;
+}
+.input-group {
+  position: relative;
+}
+.input-group .search {
+  height: 30px;
+  width: 20px;
+  background-color: #fff;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  padding: 9px;
+  position: relative;
+  -webkit-transition: all 150ms cubic-bezier(0.2, 0.6, 0.252, 1.2);
+  transition: all 150ms cubic-bezier(0.2, 0.6, 0.252, 1.2);
+}
+.input-group .search ~ .bar {
+  height: 6px;
+  width: 15px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+  position: absolute;
+  display: block;
+  opacity: 1;
+  right: -9px;
+  top: 24px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: opacity 150ms ease;
+  transition: opacity 150ms ease;
+}
+.input-group .search::-webkit-input-placeholder {
+  color: #fff;
+}
+.input-group .search::-moz-placeholder {
+  color: #fff;
+}
+.input-group .search:-ms-input-placeholder {
+  color: #fff;
+}
+.input-group .search::-ms-input-placeholder {
+  color: #fff;
+}
+.input-group .search::placeholder {
+  color: #fff;
+}
+.input-group .search:focus {
+  height: 25px;
+  width: 200px;
+  border-radius: 3px;
+  color: #26547c;
+  cursor: initial;
+}
+.input-group .search:focus::-webkit-input-placeholder {
+  color: #a1a1a1;
+}
+.input-group .search:focus::-moz-placeholder {
+  color: #a1a1a1;
+}
+.input-group .search:focus:-ms-input-placeholder {
+  color: #a1a1a1;
+}
+.input-group .search:focus::-ms-input-placeholder {
+  color: #a1a1a1;
+}
+.input-group .search:focus::placeholder {
+  color: #a1a1a1;
+}
+.input-group .search:focus ~ .bar {
+  box-shadow: none;
+  opacity: 0;
+  right: 0;
+  top: 5px;
+}

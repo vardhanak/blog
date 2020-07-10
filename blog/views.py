@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404,redirect
-from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
+from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView,base
 from django.contrib.auth.mixins import LoginRequiredMixin
 from blog.models import Post
 from django.http import JsonResponse
@@ -18,7 +18,7 @@ class PostDetail(LoginRequiredMixin,DetailView):
 class PostCreate(LoginRequiredMixin,CreateView):
 	model = Post
 	fields = ['title','body','created_date','img']
-	success_url = '/blog/'
+	success_url = '/'
 
 	def form_valid(self, form):
 		form.instance.author = self.request.user
@@ -27,13 +27,13 @@ class PostCreate(LoginRequiredMixin,CreateView):
 class PostUpdate(LoginRequiredMixin,UpdateView):
 	model = Post
 	fields = ['title','body','created_date','img']
-	success_url = '/blog/'
+	success_url = '/'
 
 
 class PostDelete(LoginRequiredMixin,DeleteView):
 	model = Post
 	fields = ['title','body','created_date','author','img']
-	success_url = '/blog/'
+	success_url = '/'
 
 def likeView(request):
 	if request.method == 'GET':
@@ -47,7 +47,7 @@ def likeView(request):
 class CommentView(FormView):
 		form_class = CommentForm
 		template_name = 'blog/comment.html'
-		success_url = '/blog/'
+		success_url = '/'
 
 		def form_valid(self,form):
 			# ur code
@@ -66,3 +66,12 @@ def add_comment_to_post(request,pk):
 	else:
 		form = CommentForm()
 	return render(request,'blog/comment.html',{'form':form})
+
+def search(request):
+	if request.method == 'GET':
+		q = request.GET.get('q')
+		object_list = Post.objects.filter(title__contains = q)
+		return render(request,'blog/post_list.html',{'object_list':object_list})
+	else:
+		object_list = None
+		return render(request,'blog/post_list.html',{'object_list':object_list})
